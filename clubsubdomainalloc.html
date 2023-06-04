@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Club Subdomain Manager</title>
+</head>
+<body>
+  <h1>Club Subdomain Manager</h1>
+  <form id="subdomain-form">
+    <label for="subdomain">Desired Subdomain:</label>
+    <input type="text" id="subdomain" name="subdomain" required><br><br>
+
+    <label for="txtRecord">Google TXT Record:</label>
+    <input type="text" id="txtRecord" name="txtRecord" required><br><br>
+
+    <button type="submit">Request Subdomain</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('subdomain-form');
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const subdomain = document.getElementById('subdomain').value;
+      const txtRecord = document.getElementById('txtRecord').value;
+
+      const response = await fetch('<your-worker-url>', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Authorization': '<your-passcode>', // Replace with your chosen passcode
+        },
+        body: new URLSearchParams({ subdomain, txtRecord }),
+      });
+
+      if (response.ok) {
+        alert('Subdomain requested successfully');
+        form.reset();
+      } else {
+        alert('Error requesting subdomain');
+      }
+    });
+  </script>
+</body>
+</html>
