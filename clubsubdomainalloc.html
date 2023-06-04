@@ -24,11 +24,11 @@
       const subdomain = document.getElementById('subdomain').value;
       const txtRecord = document.getElementById('txtRecord').value;
 
-      const response = await fetch('<your-worker-url>', {
+      const response = await fetch('WORKER_URL', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
-          'Authorization': '<your-passcode>', // Replace with your chosen passcode
+          'Authorization': 'PASSCODE', // Replace with your chosen passcode
         },
         body: new URLSearchParams({ subdomain, txtRecord }),
       });
