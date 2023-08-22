@@ -30,7 +30,7 @@ Do not click "Verify" just yet, however. Leave this page open.
 
 #### Request Portal
 Now, go to https://request.mphs.club. A 2000s era webpage will pop up 🤣.
-![](img/requestSite 1.png)
+![](img/requestSite1.png)
 In the first field (red arrow pointing to it in image above), enter your desired subdomain. So in my case, I'll enter "demo", since I would like the "demo.mphs.club" domain.
 
 In the second field, paste your google TXT record that you copied from the previous step.
